@@ -6,6 +6,15 @@ interface JobListProps {
 }
 
 const JobList = (props: JobListProps) => {
+  // empty
+  if (props.jobs && props.jobs.length === 0)
+    return (
+      <div className="card">
+        <div className="card-body text-muted">There is no job match with your input</div>
+      </div>
+    );
+
+  // has data
   return (
     <ul className="list-unstyled">
       {props.jobs.map((job: any) => (
