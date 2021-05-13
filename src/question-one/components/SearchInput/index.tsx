@@ -6,19 +6,21 @@ import React, {
 } from "react";
 
 interface SearchInputProps {
-  search: any;
+  onSearch: any;
 }
 
 const SearchInput = forwardRef<any, SearchInputProps>(
   (props: SearchInputProps, ref) => {
     // DEFINE
     const [searchTerm, setSearchTerm] = useState("");
-    const { search } = props;
+    const { onSearch } = props;
 
     // EVENTS
     const submitHandler: FormEventHandler<HTMLFormElement> = (event) => {
       event.preventDefault();
-      search(searchTerm);
+      if (searchTerm.length > 2) {
+        onSearch(searchTerm);
+      }
     };
 
     const handleOnChange: React.ChangeEventHandler<HTMLInputElement> = (
@@ -29,7 +31,9 @@ const SearchInput = forwardRef<any, SearchInputProps>(
 
     const handleOnKeyDown: KeyboardEventHandler<HTMLInputElement> = (event) => {
       if (event.key === "Enter") {
-        search(searchTerm);
+        if (searchTerm.length > 2) {
+          onSearch(searchTerm);
+        }
       }
     };
 
