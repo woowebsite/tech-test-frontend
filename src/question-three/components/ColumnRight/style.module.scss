@@ -1,0 +1,22 @@
+@import "../../assets/mixins.scss";
+
+.columnRight {
+  flex: 2;
+  background-color: $white;
+
+  padding: 1rem;
+  height: calc(100vh - 177px);
+  overflow-y: auto;
+
+  & > :nth-last-child(2) {
+    margin-bottom: 1.5rem;
+  }
+
+  & :global(.count) {
+    display: none;
+  }
+
+  & > :global(.card) {
+    background-color: $blue1;
+  }
+}

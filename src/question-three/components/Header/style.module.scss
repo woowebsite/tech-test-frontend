@@ -1,0 +1,30 @@
+@import "../../assets/mixins.scss";
+
+.nav {
+  background-color: $blue2;
+  height: 76px;
+  width: 100%;
+  margin-left: 50px;
+  padding-left: 1rem;
+  justify-content: flex-start;
+  padding: 22px;
+
+  ul {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      a {
+        text-decoration: none;
+        color: #fff;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 20px;
+      }
+      &:hover {
+        background-color: $blue3;
+      }
+    }
+  }
+}

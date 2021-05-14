@@ -1,0 +1,11 @@
+@import "../../assets/mixins.scss";
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  height: calc(100vh - 102px);
+  overflow: hidden;
+  width: 100%;
+
+  
+}
